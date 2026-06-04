@@ -14,6 +14,53 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="shortcut icon" href="./asset/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./styles.css" />
+
+    <style>
+      .wish-alert-note {
+        width: fit-content;
+        max-width: 100%;
+        margin: 14px auto 22px;
+        padding: 10px 15px;
+        border-radius: 999px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.4;
+        text-align: center;
+
+        color: #7a3554;
+        background: linear-gradient(
+          135deg,
+          rgba(246, 186, 200, 0.82),
+          rgba(217, 205, 251, 0.78)
+        );
+
+        border: 1px solid rgba(185, 76, 101, 0.24);
+        box-shadow: 0 12px 30px rgba(104, 43, 80, 0.16);
+      }
+
+      .wish-alert-note span:first-child {
+        font-size: 15px;
+        display: inline-flex;
+        animation: wishAlertBounce 1.8s ease-in-out infinite;
+      }
+
+      @keyframes wishAlertBounce {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+          transform: translateY(-3px) rotate(8deg);
+        }
+      }
+    </style>
   </head>
   <body>
     <main class="app">
@@ -82,7 +129,7 @@
               A day for smiles, peace, happiness, and beautiful memories.
             </p>
             <p class="tap-hint fade" style="animation-delay: 980ms">
-              Tap the photo for a little sparkle ✨
+              Tap the photo for a little sparkle✨<br />And turn the music on!🎵
             </p>
             <div class="btn-row fade" style="animation-delay: 1080ms">
               <button class="btn" data-next="envelope">Continue 💌</button>
@@ -96,7 +143,7 @@
         <div class="wrap">
           <div class="center">
             <p class="eyebrow fade" style="animation-delay: 100ms">
-              A letter is waiting
+              A Cute letter is waiting
             </p>
             <h2 class="title fade" style="animation-delay: 260ms">
               for
@@ -218,10 +265,13 @@
             >
               Things I wish for you
             </p>
-            <h2 class="section-heading fade" style="animation-delay: 240ms">
+            <h2 class="eyebrow light-eyebrow fade" style="animation-delay: 240ms">
               Only beautiful things ahead
             </h2>
-
+            <div class="wish-alert-note">
+              <span>🌷</span>
+              <span>Tap each wish card to reveal a little wish</span>
+            </div>
             <div class="wishes-grid">
               <div
                 class="wish-card"
