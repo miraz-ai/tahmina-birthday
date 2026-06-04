@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday, Tahmina 💌</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="shortcut icon" href="./asset/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="particles" id="particles"></div>
+      <div class="confetti-layer" id="confettiLayer"></div>
+
+      <audio id="music" loop>
+        <source src="./asset/Photograph.mp3" type="audio/mpeg" />
+      </audio>
+
+      <button class="music-btn" id="musicBtn">🎵</button>
+      <div class="dots" id="dots"></div>
+      <div class="toast" id="toast">Message</div>
+
+      <!-- 1. Opening -->
+      <section class="stage active visible" id="opening">
+        <div class="wrap">
+          <div class="center">
+            <div class="moon fade" style="animation-delay: 100ms"></div>
+            <p class="eyebrow fade" style="animation-delay: 260ms">
+              A cutie surprise
+            </p>
+            <h1 class="title fade" style="animation-delay: 420ms">
+              For <em>Tahmina</em>
+            </h1>
+            <p class="subtitle fade" style="animation-delay: 620ms">
+              made with care, wrapped in wishes, and hidden inside a little
+              letter.
+            </p>
+            <div class="btn-row fade" style="animation-delay: 840ms">
+              <button class="btn" data-next="photo">
+                Begin the journey ✨
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Photo -->
+      <section class="stage" id="photo">
+        <div class="wrap">
+          <div class="center">
+            <div class="photo-box" id="photoBox">
+              <div class="photo-glow"></div>
+              <div class="photo-frame">
+                <img
+                  src="./asset/tahmina.jpeg"
+                  alt="Tahmina Cuite Photo"
+                  id="mainPhoto"
+                />
+                <div class="photo-fallback" id="photoFallback">T</div>
+              </div>
+              <span class="sparkle s1">✦</span>
+              <span class="sparkle s2">✨</span>
+              <span class="sparkle s3">✧</span>
+              <span class="sparkle s4">🌸</span>
+            </div>
+
+            <p class="eyebrow fade" style="animation-delay: 450ms">
+              A beautiful day begins
+            </p>
+            <h2 class="title fade" style="animation-delay: 650ms">
+              Today is <span class="gradient">Tahmina’s</span> day
+            </h2>
+            <p class="subtitle fade" style="animation-delay: 850ms">
+              A day for smiles, peace, happiness, and beautiful memories.
+            </p>
+            <p class="tap-hint fade" style="animation-delay: 980ms">
+              Tap the photo for a little sparkle ✨
+            </p>
+            <div class="btn-row fade" style="animation-delay: 1080ms">
+              <button class="btn" data-next="envelope">Continue 💌</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Envelope -->
+      <section class="stage" id="envelope">
+        <div class="wrap">
+          <div class="center">
+            <p class="eyebrow fade" style="animation-delay: 100ms">
+              A letter is waiting
+            </p>
+            <h2 class="title fade" style="animation-delay: 260ms">
+              for
+              <span class="gradient">Tahmina</span>
+            </h2>
+            <p class="subtitle fade" style="animation-delay: 460ms">
+              just a few words written with care <br />
+              and good wishes.
+            </p>
+
+            <div
+              class="envelope-wrap fade"
+              id="envelopeWrap"
+              style="animation-delay: 650ms"
+            >
+              <div class="envelope" id="envelopeBox">
+                <div class="letter-peek"></div>
+                <div class="flap"></div>
+                <div class="wax">T</div>
+              </div>
+            </div>
+
+            <p class="tap-hint fade" style="animation-delay: 850ms">
+              Tap the envelope to open it
+            </p>
+
+            <div class="btn-row" id="readLetterBtn">
+              <button class="btn" data-next="letter1">
+                Read the letter 🌷
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Letter page 1 -->
+      <section class="stage paper-stage" id="letter1">
+        <div class="wrap">
+          <article class="paper">
+            <p class="paper-date">06 June, 2026</p>
+            <h2 class="paper-title">Dear Tahmina,</h2>
+
+            <div class="paper-text" id="letterText1">
+              <!-- EDIT LETTER PAGE 1 -->
+              <p class="line">I genuinely admire the kind of person you are.</p>
+              <p class="line">
+                Not because of anything loud or dramatic, but because of the
+                small things the way your presence feels calm, the way you make
+                people feel comfortable, and the kindness you carry without even
+                trying.
+              </p>
+              <p class="line">
+                I hope life becomes softer for you. I hope your worries feel
+                lighter, your smile stays longer, and your heart finds peace in
+                every little moment.
+              </p>
+              <p class="line">
+                May this year bring you closer to everything you quietly pray
+                for, everything you dream about, and everything you truly
+                deserve.
+              </p>
+              <p class="line">
+                I pray that your heart feels alive again, and that faith slowly
+                returns in yourself, in your journey, and in the beauty of your
+                own presence.
+              </p>
+            </div>
+            <div class="paper-actions" id="letter1Actions">
+              <button class="btn paper-btn primary" data-next="letter2">
+                Turn the page ✨
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. Letter page 2 -->
+      <section class="stage paper-stage" id="letter2">
+        <div class="wrap">
+          <article class="paper">
+            <p class="paper-date">A little more...</p>
+            <h2 class="paper-title">For your new year</h2>
+
+            <div class="paper-text" id="letterText2">
+              <!-- EDIT LETTER PAGE 2 -->
+              <p class="line">
+                I hope this new year of your life becomes kinder, brighter, and
+                more beautiful than the last one.
+              </p>
+              <p class="line">
+                May your smile always stay as beautiful as it is today, and may
+                your future open doors full of happiness and success.
+              </p>
+              <p class="line">
+                Happy Birthday, Tahmina. Keep glowing in your own beautiful way.
+              </p>
+            </div>
+
+            <!-- EDIT SIGNATURE -->
+            <p class="signature" id="signature">— Miraz</p>
+
+            <div class="paper-actions" id="letter2Actions">
+              <button class="btn paper-btn" data-next="letter1">Back</button>
+              <button class="btn paper-btn primary" data-next="wishes">
+                Continue 🌸
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 6. Wishes -->
+      <section class="stage light-stage" id="wishes">
+        <div class="wrap">
+          <div class="card">
+            <p
+              class="eyebrow light-eyebrow fade"
+              style="animation-delay: 100ms"
+            >
+              Things I wish for you
+            </p>
+            <h2 class="section-heading fade" style="animation-delay: 240ms">
+              Only beautiful things ahead
+            </h2>
+
+            <div class="wishes-grid">
+              <div
+                class="wish-card"
+                data-wish="May happiness find you in the smallest moments ✨"
+              >
+                <div class="wish-icon">✨</div>
+                <div class="wish-title">Endless Happiness</div>
+                <div class="wish-sub">every single day</div>
+              </div>
+              <div
+                class="wish-card"
+                data-wish="May your heart always feel light and peaceful 🕊️"
+              >
+                <div class="wish-icon">🕊️</div>
+                <div class="wish-title">Peaceful Heart</div>
+                <div class="wish-sub">always and forever</div>
+              </div>
+              <div
+                class="wish-card"
+                data-wish="May success follow your effort beautifully 🌟"
+              >
+                <div class="wish-icon">🌟</div>
+                <div class="wish-title">Bright Success</div>
+                <div class="wish-sub">in everything you do</div>
+              </div>
+              <div
+                class="wish-card"
+                data-wish="May your future become even prettier than your dreams 🌸"
+              >
+                <div class="wish-icon">🌸</div>
+                <div class="wish-title">Beautiful Future</div>
+                <div class="wish-sub">beyond your dreams</div>
+              </div>
+            </div>
+
+            <div class="btn-row fade" style="animation-delay: 1500ms">
+              <button class="btn" data-next="final">Final surprise ✨</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Final -->
+      <section class="stage" id="final">
+        <div class="wrap">
+          <div class="center">
+            <p class="eyebrow fade" style="animation-delay: 140ms">
+              Birthday letter delivered 💌
+            </p>
+            <h2 class="final-title fade" style="animation-delay: 320ms">
+              You are truly special,
+              <span>Tahmina.</span>
+            </h2>
+            <p class="final-sub fade" style="animation-delay: 560ms">
+              May this year bring you peace, success, and countless reasons to
+              smile.
+            </p>
+
+            <div class="heart-wrap fade" style="animation-delay: 780ms">
+              <button
+                class="heart-button"
+                id="heart"
+                aria-label="Tap for final message"
+              >
+                💗
+              </button>
+            </div>
+            <p class="tap-hint fade" style="animation-delay: 950ms">
+              Tap the heart for one last little message
+            </p>
+
+            <div class="secret" id="secret">
+              I hope this little letter brings a smile to your face, even for a
+              moment. Made with care, just to make you smile.
+            </div>
+
+            <div class="btn-row fade" style="animation-delay: 1100ms">
+              <button class="btn btn-outline" id="replay">
+                Replay the surprise ↺
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/script.js"></script>
+  </body>
+</html>
