@@ -83,12 +83,12 @@ button {
 
 .wrap {
   width: min(100%, 430px);
-  min-height: min(760px, calc(100dvh - 48px));
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 6vh;
 }
-
 .center {
   text-align: center;
   width: 100%;
