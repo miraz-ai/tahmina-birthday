@@ -16,10 +16,35 @@
     <link rel="stylesheet" href="./styles.css" />
 
     <style>
+      /* Fix wishes heading + alert visibility */
+      #wishes .section-heading {
+        color: #4a2638 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        font-family: "Cormorant Garamond", serif !important;
+        font-size: 34px !important;
+        font-weight: 700 !important;
+        line-height: 1.1 !important;
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+        text-align: center !important;
+
+        margin: 8px auto 18px !important;
+        max-width: 330px;
+      }
+
+      #wishes .section-heading::selection,
+      #wishes .wish-title::selection,
+      #wishes .wish-sub::selection {
+        background: transparent;
+      }
+
       .wish-alert-note {
         width: fit-content;
         max-width: 100%;
-        margin: 14px auto 22px;
+        margin: 16px auto 26px;
         padding: 10px 15px;
         border-radius: 999px;
 
@@ -33,11 +58,11 @@
         line-height: 1.4;
         text-align: center;
 
-        color: #7a3554;
+        color: #7a3554 !important;
         background: linear-gradient(
           135deg,
-          rgba(246, 186, 200, 0.82),
-          rgba(217, 205, 251, 0.78)
+          rgba(246, 186, 200, 0.88),
+          rgba(217, 205, 251, 0.82)
         );
 
         border: 1px solid rgba(185, 76, 101, 0.24);
@@ -58,6 +83,184 @@
 
         50% {
           transform: translateY(-3px) rotate(8deg);
+        }
+      }
+
+      /* Premium wishes section override */
+      #wishes .wishes-grid {
+        gap: 16px !important;
+      }
+
+      #wishes .wish-card {
+        position: relative;
+        overflow: hidden;
+
+        min-height: 150px !important;
+        padding: 22px 14px !important;
+
+        border-radius: 26px !important;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(246, 186, 200, 0.42),
+            transparent 38%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(217, 205, 251, 0.42),
+            transparent 38%
+          ),
+          rgba(255, 255, 255, 0.78) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.9) !important;
+        box-shadow:
+          0 18px 42px rgba(104, 43, 80, 0.14),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+
+        color: #3b2334 !important;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        transition:
+          transform 260ms ease,
+          box-shadow 260ms ease,
+          border-color 260ms ease !important;
+      }
+
+      #wishes .wish-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.55) 45%,
+          transparent 70%
+        );
+        transform: translateX(-120%);
+        transition: transform 700ms ease;
+        pointer-events: none;
+      }
+
+      #wishes .wish-card::after {
+        content: "tap";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+
+        padding: 4px 8px;
+        border-radius: 999px;
+
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+
+        color: #8b4b68;
+        background: rgba(246, 186, 200, 0.36);
+        border: 1px solid rgba(185, 76, 101, 0.12);
+      }
+
+      #wishes .wish-card:hover,
+      #wishes .wish-card:active {
+        transform: translateY(-5px) scale(1.02) !important;
+        box-shadow:
+          0 24px 54px rgba(104, 43, 80, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+        border-color: rgba(246, 186, 200, 0.8) !important;
+      }
+
+      #wishes .wish-card:hover::before,
+      #wishes .wish-card:active::before {
+        transform: translateX(120%);
+      }
+
+      #wishes .wish-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px !important;
+
+        display: grid !important;
+        place-items: center;
+
+        font-size: 28px !important;
+        border-radius: 18px;
+
+        color: #3b2334 !important;
+        background: linear-gradient(
+          135deg,
+          rgba(246, 186, 200, 0.62),
+          rgba(217, 205, 251, 0.58)
+        ) !important;
+
+        box-shadow:
+          0 10px 24px rgba(104, 43, 80, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.72);
+
+        animation: wishIconFloat 2.8s ease-in-out infinite;
+      }
+
+      #wishes .wish-title {
+        color: #3b2334 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        line-height: 1.08 !important;
+        text-align: center;
+      }
+
+      #wishes .wish-sub {
+        margin-top: 7px !important;
+
+        color: #6e5366 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        text-align: center;
+      }
+
+      @keyframes wishIconFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+          transform: translateY(-5px) rotate(4deg);
+        }
+      }
+
+      @media (max-width: 360px) {
+        #wishes .section-heading {
+          font-size: 28px !important;
+        }
+
+        .wish-alert-note {
+          font-size: 11px;
+          padding: 9px 12px;
+          border-radius: 18px;
+        }
+
+        #wishes .wishes-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        #wishes .wish-card {
+          min-height: 118px !important;
+          padding: 18px 14px !important;
+        }
+
+        #wishes .wish-icon {
+          width: 44px;
+          height: 44px;
+          font-size: 24px !important;
         }
       }
     </style>
@@ -87,8 +290,7 @@
               For <em>Tahmina</em>
             </h1>
             <p class="subtitle fade" style="animation-delay: 620ms">
-              made with care, wrapped in wishes, and hidden inside a little
-              letter.
+              a small thing, made only to bring a smile.
             </p>
             <div class="btn-row fade" style="animation-delay: 840ms">
               <button class="btn" data-next="photo">
@@ -118,7 +320,7 @@
               <span class="sparkle s3">✧</span>
               <span class="sparkle s4">🌸</span>
             </div>
-
+            <br><br>
             <p class="eyebrow fade" style="animation-delay: 450ms">
               A beautiful day begins
             </p>
@@ -126,10 +328,11 @@
               Today is <span class="gradient">Tahmina’s</span> day
             </h2>
             <p class="subtitle fade" style="animation-delay: 850ms">
-              A day for smiles, peace, happiness, and beautiful memories.
+              A day made for soft smiles, quiet happiness, and memories she will
+              keep close.
             </p>
             <p class="tap-hint fade" style="animation-delay: 980ms">
-              Tap the photo for a little sparkle✨<br />And turn the music on!🎵
+              Tap the photo for a little sparkle ✨ <br>and let the music play 🎵
             </p>
             <div class="btn-row fade" style="animation-delay: 1080ms">
               <button class="btn" data-next="envelope">Continue 💌</button>
@@ -265,13 +468,14 @@
             >
               Things I wish for you
             </p>
-            <h2 class="eyebrow light-eyebrow section-heading fade" style="animation-delay: 240ms">
+            <h2 class="section-heading fade" style="animation-delay: 240ms">
               Only beautiful things ahead
             </h2>
             <div class="wish-alert-note">
               <span>🌷</span>
               <span>Tap each wish card to reveal a little wish</span>
             </div>
+
             <div class="wishes-grid">
               <div
                 class="wish-card"
@@ -281,6 +485,7 @@
                 <div class="wish-title">Endless Happiness</div>
                 <div class="wish-sub">every single day</div>
               </div>
+
               <div
                 class="wish-card"
                 data-wish="May your heart always feel light and peaceful 🕊️"
@@ -289,6 +494,7 @@
                 <div class="wish-title">Peaceful Heart</div>
                 <div class="wish-sub">always and forever</div>
               </div>
+
               <div
                 class="wish-card"
                 data-wish="May success follow your effort beautifully 🌟"
@@ -297,6 +503,7 @@
                 <div class="wish-title">Bright Success</div>
                 <div class="wish-sub">in everything you do</div>
               </div>
+
               <div
                 class="wish-card"
                 data-wish="May your future become even prettier than your dreams 🌸"
